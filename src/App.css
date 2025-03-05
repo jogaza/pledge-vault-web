@@ -1,8 +1,34 @@
+/* Custom styles for App component */
+.nav-link {
+  @apply text-gray-300 hover:text-green-500 transition-colors duration-200;
+}
+
+.button-primary {
+  @apply bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200;
+}
+
+.button-secondary {
+  @apply bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors duration-200;
+}
+
+.feature-card {
+  @apply bg-gray-800/50 p-6 rounded-xl transition-transform duration-200 hover:scale-105;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl font-bold text-center mb-16;
+}
+
+.section-description {
+  @apply text-xl text-gray-300 mb-12 max-w-2xl mx-auto;
+}
+
+/* Remove default styles */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {

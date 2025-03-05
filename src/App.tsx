@@ -1,23 +1,30 @@
-import { useState } from "react";
-import "./App.css";
+import { Routes, Route, Outlet } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { About } from "./pages/About";
+import { Contact } from "./pages/Contact";
+import { FAQ } from "./pages/FAQ";
+import { Privacy } from "./pages/Privacy";
+import { Terms } from "./pages/Terms";
+import { Home } from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const date = new Date().toLocaleString();
-
   return (
-    <>
-      <h1 className="text-green-500 font-bold">New Pledge Vault - {date}</h1>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route
+        element={
+          <Layout>
+            <Outlet />
+          </Layout>
+        }
+      >
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+      </Route>
+    </Routes>
   );
 }
 
