@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/24/outline";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 const faqs = [
   {
@@ -60,92 +60,103 @@ export function FAQ() {
   const { theme } = useTheme();
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-6xl font-bold mb-8">
-            Frequently Asked <span className="text-green-500">Questions</span>
-          </h1>
-          <p
-            className={`text-xl ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            } max-w-3xl mx-auto`}
+    <div
+      className={`min-h-screen ${
+        theme === "dark" ? "bg-blue-950" : "bg-white"
+      }`}
+    >
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            Find answers to common questions about using Pledge Vault for your
-            international money transfers.
-          </p>
-        </motion.div>
-
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8">
+              Frequently Asked <span className="text-blue-600">Questions</span>
+            </h1>
+            <p
+              className={`text-xl ${
+                theme === "dark" ? "text-blue-200" : "text-blue-600"
+              } max-w-3xl mx-auto`}
             >
-              <Disclosure>
-                {({ open }) => (
-                  <div
-                    className={`rounded-lg ${
-                      theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"
-                    }`}
-                  >
-                    <Disclosure.Button className="flex justify-between w-full px-6 py-4 text-left">
-                      <span className="text-lg font-semibold">
-                        {faq.question}
-                      </span>
-                      <ChevronUpIcon
-                        className={`${
-                          open ? "transform rotate-180" : ""
-                        } w-5 h-5 text-green-500 transition-transform duration-200`}
-                      />
-                    </Disclosure.Button>
-                    <Disclosure.Panel
-                      className={`px-6 pb-4 ${
-                        theme === "dark" ? "text-gray-300" : "text-gray-600"
-                      }`}
-                    >
-                      {faq.answer}
-                    </Disclosure.Panel>
-                  </div>
-                )}
-              </Disclosure>
-            </motion.div>
-          ))}
-        </div>
+              Find answers to common questions about using Pledge Vault
+            </p>
+          </motion.div>
 
-        {/* Contact Support */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className={`mt-16 p-8 rounded-xl text-center ${
-            theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"
-          }`}
-        >
-          <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
-          <p
-            className={`mb-6 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            }`}
+          {/* FAQ Accordion */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Disclosure>
+                  {({ open }) => (
+                    <div
+                      className={`rounded-lg ${
+                        theme === "dark" ? "bg-blue-900/50" : "bg-blue-50"
+                      } backdrop-blur-sm`}
+                    >
+                      <Disclosure.Button className="flex justify-between w-full px-6 py-4 text-left">
+                        <span className="text-lg font-semibold">
+                          {faq.question}
+                        </span>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "transform rotate-180" : ""
+                          } w-5 h-5 text-blue-500 transition-transform duration-200`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel
+                        className={`px-6 pb-4 ${
+                          theme === "dark" ? "text-blue-200" : "text-blue-900"
+                        }`}
+                      >
+                        {faq.answer}
+                      </Disclosure.Panel>
+                    </div>
+                  )}
+                </Disclosure>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Contact Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className={`mt-16 p-8 rounded-xl ${
+              theme === "dark" ? "bg-blue-800/50" : "bg-blue-50"
+            } backdrop-blur-sm`}
           >
-            Our support team is here to help you 24/7
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-          >
-            Contact Support
-          </a>
-        </motion.div>
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Still have questions?
+            </h2>
+            <p
+              className={`text-center mb-6 ${
+                theme === "dark" ? "text-blue-200" : "text-blue-600"
+              }`}
+            >
+              Our support team is here to help you with any questions you may
+              have
+            </p>
+            <div className="text-center">
+              <a
+                href="/contact"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg"
+              >
+                Contact Support
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
-                <span className="text-2xl font-bold text-green-500">
+                <span className="text-2xl font-bold text-blue-500">
                   Pledge Vault
                 </span>
               </Link>
@@ -33,25 +33,25 @@ export function Layout({ children }: LayoutProps) {
             <div className="flex items-center space-x-4">
               <Link
                 to="/"
-                className="px-4 py-2 rounded-lg hover:text-green-500 transition-colors"
+                className="px-4 py-2 rounded-lg hover:text-blue-500 transition-colors"
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="px-4 py-2 rounded-lg hover:text-green-500 transition-colors"
+                className="px-4 py-2 rounded-lg hover:text-blue-500 transition-colors"
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="px-4 py-2 rounded-lg hover:text-green-500 transition-colors"
+                className="px-4 py-2 rounded-lg hover:text-blue-500 transition-colors"
               >
                 Contact
               </Link>
               <Link
                 to="/faq"
-                className="px-4 py-2 rounded-lg hover:text-green-500 transition-colors"
+                className="px-4 py-2 rounded-lg hover:text-blue-500 transition-colors"
               >
                 FAQ
               </Link>
@@ -91,22 +91,22 @@ export function Layout({ children }: LayoutProps) {
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="hover:text-green-500">
+                  <Link to="/" className="hover:text-blue-500">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-green-500">
+                  <Link to="/about" className="hover:text-blue-500">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-green-500">
+                  <Link to="/contact" className="hover:text-blue-500">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/faq" className="hover:text-green-500">
+                  <Link to="/faq" className="hover:text-blue-500">
                     FAQ
                   </Link>
                 </li>
@@ -116,12 +116,12 @@ export function Layout({ children }: LayoutProps) {
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/privacy" className="hover:text-green-500">
+                  <Link to="/privacy" className="hover:text-blue-500">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-green-500">
+                  <Link to="/terms" className="hover:text-blue-500">
                     Terms of Service
                   </Link>
                 </li>
@@ -130,13 +130,13 @@ export function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-2xl hover:text-green-500">
+                <a href="#" className="text-2xl hover:text-blue-500">
                   📱
                 </a>
-                <a href="#" className="text-2xl hover:text-green-500">
+                <a href="#" className="text-2xl hover:text-blue-500">
                   💬
                 </a>
-                <a href="#" className="text-2xl hover:text-green-500">
+                <a href="#" className="text-2xl hover:text-blue-500">
                   📧
                 </a>
               </div>

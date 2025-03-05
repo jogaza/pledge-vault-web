@@ -90,76 +90,86 @@ export function Terms() {
   const { theme } = useTheme();
 
   return (
-    <div className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-6xl font-bold mb-8">
-            Terms of <span className="text-green-500">Service</span>
-          </h1>
-          <p
-            className={`text-xl ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            } max-w-3xl mx-auto`}
+    <div
+      className={`min-h-screen ${
+        theme === "dark" ? "bg-blue-950" : "bg-white"
+      }`}
+    >
+      <div className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent" />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            Last updated: March 15, 2024
-          </p>
-        </motion.div>
-
-        {/* Terms Sections */}
-        <div className="space-y-12">
-          {sections.map((section, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+            <h1 className="text-4xl sm:text-6xl font-bold mb-8">
+              Terms of <span className="text-blue-600">Service</span>
+            </h1>
+            <p
+              className={`text-xl ${
+                theme === "dark" ? "text-blue-200" : "text-blue-600"
+              } max-w-3xl mx-auto`}
             >
-              <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
-              <div
-                className={`${
-                  theme === "dark" ? "text-gray-300" : "text-gray-600"
-                } space-y-4 whitespace-pre-line`}
+              Last updated: March 15, 2024
+            </p>
+          </motion.div>
+
+          {/* Terms Sections */}
+          <div className="space-y-12">
+            {sections.map((section, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`p-6 rounded-xl ${
+                  theme === "dark" ? "bg-blue-900/50" : "bg-blue-50"
+                } backdrop-blur-sm`}
               >
-                {section.content}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Contact Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className={`mt-16 p-8 rounded-xl ${
-            theme === "dark" ? "bg-gray-800/50" : "bg-gray-50"
-          }`}
-        >
-          <h2 className="text-2xl font-bold mb-4 text-center">
-            Questions about our Terms?
-          </h2>
-          <p
-            className={`text-center mb-6 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            Our legal team is here to help you understand our terms of service
-          </p>
-          <div className="text-center">
-            <a
-              href="/contact"
-              className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
-            >
-              Contact Legal Team
-            </a>
+                <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+                <div
+                  className={`${
+                    theme === "dark" ? "text-blue-200" : "text-blue-900"
+                  } space-y-4 whitespace-pre-line`}
+                >
+                  {section.content}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+
+          {/* Contact Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className={`mt-16 p-8 rounded-xl ${
+              theme === "dark" ? "bg-blue-800/50" : "bg-blue-50"
+            } backdrop-blur-sm`}
+          >
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Questions about our Terms?
+            </h2>
+            <p
+              className={`text-center mb-6 ${
+                theme === "dark" ? "text-blue-200" : "text-blue-600"
+              }`}
+            >
+              Our legal team is here to help you understand our terms of service
+            </p>
+            <div className="text-center">
+              <a
+                href="/contact"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg"
+              >
+                Contact Legal Team
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
